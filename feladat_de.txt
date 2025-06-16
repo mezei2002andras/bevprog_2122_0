@@ -1,0 +1,36 @@
+BevProg 2021.12.22. Géptermi ZH 
+
+1.feladat 
+
+A mellékelt beugro_a illetve beugro_b program kiegészítése, hogy minden pontot megadjon a program. A programban már adott szöveget nem szabad módosítani, kizárólag a kommentjelzést szabad eltávolítani a main() függvénybõl. Munka közben javasolt folyamatosan haladni ellenoriz() függvényenként a kommentezés eltávolításával. A beugró akkor érvényes, ha minden pontot megkaptál, és nincs semmilyen módosítás a main() függvényben és az ellenoriz() makróban, illetve tilos új #define és #undefine sorok leírása is. 
+
+Figyelem: beugró nélkül nem értékeljük a második feladatot! 
+
+2. feladat
+
+A Covid19 Omikron változatának egyik elsõ mérési adataival fogunk dolgozni Dél-afrikai Köztársaságból. Hivatkozás: Pulliam, JRC, C van Schalkwyk, N Govender, A von Gottberg, C Cohen, MJ Groome, J Dushoff, K Mlisana, and H Moultrie. (2021) Increased risk of SARS-CoV-2 reinfection associated with emergence of the Omicron variant in South Africa. medRxiv DOI: 10.1101/2021.11.11.21266068
+
+Két fájlt kell feldolgozni, a demo.csv egy demográfiai adatokat tartalmazó fájl, a ts.csv az idõsor (time series) a fertõzõdési adatokkal. Mindkét fájl elsõ sora az oszlopok neveit tartalmazó fejléc.
+
+Technikai megjegyzés: a .csv fájlokat esetleg automatikusan megnyitja az Excel a géptermi gépeken, és ha nem vigyázol könnyen módosíthatod vagy konvertálhatod a fájlt, ezért lehetõleg csak akkor nyisd meg Excelben ha tudod mit csinálsz, a feladatmegoldáshoz közvetlenül a .csv fájlt kell C++-ból megnyitni, nincs szükség formátumkonverzióra. Ha nehézségeid vannak a közvetlen ASCII ránézéssel kapcsolatban, nyisd meg Notepad++-ban, vagy a Total Commander nézõkével.
+
+A demográfiai adatsor formátuma
+
+példa: EASTERN CAPE,(10,15],F,7753,55,7808
+a tartomány neve, korcsoport intervallum formátumban, nem kategória (az U ismeretlen, nem felvett adatot jelöl), korábban nem megfertõzõdött emberek száma, fertõzésen valószínûsíthetõen legalább egyszer átesettek száma, és végül ez utóbbi két szám összege ami az összes érintett száma így.
+
+Az idõsor formátuma
+
+példa: 2020-03-15,23,0
+Dátum év-hó-nap formátumban, újonnan mért elõször fertõzöttek száma aznap, újonnan mért újrafertõzöttek száma aznap
+
+feladatok:
+
+a) Limpopo tartományban összesen hány újrafertõzõdést mértek 20-40 éves kor között?  (válasz: 632)
+b) van-e olyan nap, amihez nincs adat? (a hónapok napszámai rendre 31,28,31,30,31,30,31,31,30,31,30,31) (válasz: nincs)
+c) a program fogadjon hullámintervallumokat fájlból kezdõ és befejezõ dátum pár formájában, és adja meg az adott hullám újrafertõzõdési kéthetes mozgóátlag (minden nap körül +- 7 napi adattal együtt vett átlag) görbéjéhez tartozó olyan egész szorzót ami az adott hullám elsõ fertõzõdéseinek kéthetes mozgóátlag görbéjéhez leghasonlóbb görbét adja négyzetes metrikával (különbségek négyzeteinek összege). Tipp: minél fertõzõbb volt a domináns variáns annál kisebb szám kell kijöjjön. Példa intervallumok: (??)
+
+
+Pontozás:
+
+Az irányadó pontozási forma a következõ: max 10 pont a sikeres beugró, az a) b) c) feladatok mûködése 10-10-10 pont, a második feladatban használt függvények eleganciája 10 pontig, a rekordok értelmes tervezése szintén 10 pontig értékelhetõ, de a függvényekre és rekordokra kapott pontszám összesen nem lehet több, mint az a) b) c) mûködésre adott pontok összege - vagyis nem lehet nem mûködõ programra pontot kapni, csak mert szép. 
